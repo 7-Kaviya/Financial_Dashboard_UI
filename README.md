@@ -1,0 +1,2 @@
+A responsive finance dashboard built with React that visualizes income, expenses, and balance trends using interactive charts and structured components.
+It includes transaction management, role-based UI simulation, and insightful analytics to help users understand and track their financial activity effectively.
