@@ -3,6 +3,7 @@ import SummaryCards from "@/components/dashboard/SummaryCards";
 import BalanceTrendChart from "@/components/dashboard/BalanceTrendChart";
 import SpendingBreakdown from "@/components/dashboard/SpendingBreakdown";
 import SpendingTreemap from "@/components/dashboard/SpendingTreemap";
+import IncomeExpenseChart from "@/components/dashboard/IncomeExpenseChart";
 import TransactionsTable from "@/components/dashboard/TransactionsTable";
 import InsightsSection from "@/components/dashboard/InsightsSection";
 import RoleSwitcher from "@/components/dashboard/RoleSwitcher";
@@ -21,7 +22,7 @@ const Dashboard = () => {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <LayoutDashboard className="w-4 h-4 text-primary-foreground" />
             </div>
-            <h1 className="font-display font-bold text-lg">Finalysis</h1>
+            <h1 className="font-display font-bold text-lg">FinTrack</h1>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" onClick={toggleTheme} className="h-8 w-8 p-0">
@@ -44,7 +45,10 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <SpendingTreemap />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <IncomeExpenseChart />
+          <SpendingTreemap />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">

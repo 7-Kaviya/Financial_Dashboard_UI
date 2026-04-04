@@ -47,7 +47,7 @@ const SpendingBreakdown = () => {
           </ResponsiveContainer>
         </div>
         <div className="w-full mt-3 space-y-2">
-          {data.slice(0, 5).map((d, i) => (
+          {data.map((d, i) => (
             <div key={d.name} className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: COLORS[i % COLORS.length] }} />
