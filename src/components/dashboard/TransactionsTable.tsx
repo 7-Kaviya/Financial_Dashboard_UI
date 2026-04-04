@@ -76,9 +76,9 @@ const TransactionsTable = () => {
   return (
     <div className="bg-card rounded-xl shadow-sm border border-border/50 animate-fade-in" style={{ animationDelay: "400ms" }}>
       <div className="p-5 border-b border-border/50">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
           <h3 className="font-display font-semibold text-sm">Transactions</h3>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="h-8">
