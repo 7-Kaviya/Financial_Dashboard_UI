@@ -34,9 +34,9 @@ const BalanceTrendChart = () => {
   }, [transactions]);
 
   return (
-    <div className="bg-card rounded-xl p-5 shadow-sm border border-border/50 animate-fade-in" style={{ animationDelay: "200ms" }}>
+    <div className="bg-card rounded-xl p-5 shadow-sm border border-border/50 animate-fade-in h-full flex flex-col" style={{ animationDelay: "200ms" }}>
       <h3 className="font-display font-semibold text-sm mb-4">Balance Trend</h3>
-      <div className="h-64">
+      <div className="flex-1 min-h-[16rem]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
