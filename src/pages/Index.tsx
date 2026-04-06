@@ -1,15 +1,13 @@
-import { FinanceProvider } from "@/context/FinanceContext";
+
 import SummaryCards from "@/components/dashboard/SummaryCards";
 import BalanceTrendChart from "@/components/dashboard/BalanceTrendChart";
 import SpendingBreakdown from "@/components/dashboard/SpendingBreakdown";
 import SpendingTreemap from "@/components/dashboard/SpendingTreemap";
 import IncomeExpenseChart from "@/components/dashboard/IncomeExpenseChart";
-import TransactionsTable from "@/components/dashboard/TransactionsTable";
-import InsightsSection from "@/components/dashboard/InsightsSection";
-import RoleSwitcher from "@/components/dashboard/RoleSwitcher";
-import { LayoutDashboard, Moon, Sun } from "lucide-react";
+import { LayoutDashboard, Moon, Sun, ArrowRight, Lightbulb } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { theme, toggleTheme } = useTheme();
@@ -22,13 +20,18 @@ const Dashboard = () => {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <LayoutDashboard className="w-4 h-4 text-primary-foreground" />
             </div>
-            <h1 className="font-display font-bold text-lg">Finalysis</h1>
+            <h1 className="font-display font-bold text-lg">Zorvyn Finalysis</h1>
           </div>
           <div className="flex items-center gap-3">
+            <Button variant="ghost" size="sm" asChild className="h-8">
+              <Link to="/transactions">Transactions <ArrowRight className="w-4 h-4 ml-1" /></Link>
+            </Button>
+            <Button variant="ghost" size="sm" asChild className="h-8">
+              <Link to="/insights"><Lightbulb className="w-4 h-4 mr-1" /> Insights</Link>
+            </Button>
             <Button variant="ghost" size="sm" onClick={toggleTheme} className="h-8 w-8 p-0">
               {theme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
             </Button>
-            <RoleSwitcher />
           </div>
         </div>
       </header>
@@ -50,17 +53,10 @@ const Dashboard = () => {
           <SpendingTreemap />
         </div>
 
-      <TransactionsTable />  
-      <InsightsSection />
+        
       </main>
     </div>
   );
 };
 
-const Index = () => (
-  <FinanceProvider>
-    <Dashboard />
-  </FinanceProvider>
-);
-
-export default Index;
+export default Dashboard;
